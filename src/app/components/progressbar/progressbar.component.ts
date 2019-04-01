@@ -1,5 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { getBankAccessesLoading } from '@app/modules/root-store/feature-stores/banksapi/selectors/bankaccess.selectors';
+import {
+    getBankAccessesLoaded,
+    getBankAccessesLoading
+} from '@app/modules/root-store/feature-stores/banksapi/selectors/bankaccess.selectors';
 import { RootState } from '@app/modules/root-store/root-state';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -11,7 +14,9 @@ import { Observable } from 'rxjs';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressbarComponent implements OnInit {
+
     bankAccessesLoading$: Observable<boolean>;
+    bankAccessesLoaded$: Observable<boolean>;
 
     constructor(
         private store: Store<RootState>
@@ -22,6 +27,10 @@ export class ProgressbarComponent implements OnInit {
         this.bankAccessesLoading$ = this.store
             .pipe(
                 select(getBankAccessesLoading)
+            );
+        this.bankAccessesLoaded$ = this.store
+            .pipe(
+                select(getBankAccessesLoaded)
             );
     }
 

@@ -1,19 +1,18 @@
-<div class="container-fluid">
+<div class="container-fluid border border-danger pt-2">
     <div class="row text-center ">
-        <div class="col-4 shadow">
-            <button class="btn btn-block" (click)="clickLoad()" [disabled]="isLoading">Load</button>
+        <div class="col-4">
+            <button class="btn btn-outline-primary btn-block" (click)="clickLoad()" [disabled]="isLoading">Load</button>
         </div>
-        <div class="col-4 shadow">
-            <button class="btn btn-block" (click)="clickAdd()" [disabled]="isLoading">Add Access</button>
+        <div class="col-4">
+            <button class="btn btn-outline-success btn-block" (click)="clickAdd()" [disabled]="isLoading">Add Access</button>
         </div>
-        <div class="col-4 shadow">
-            <button class="btn btn-block" (click)="clickRefresh()" [disabled]="isLoading">Refresh</button>
+        <div class="col-4">
+            <button class="btn btn-outline-danger btn-block" (click)="clickRefresh()" [disabled]="isLoading">Refresh</button>
         </div>
     </div>
     <div class="row mt-4 shadow">
         <div class="col-12 p-3">
-            <pre>bankAccessesLoading$: {{ (bankAccessesLoading$ | async) | json }}</pre>
-            <pre>bankAccessesLoaded$: {{ (bankAccessesLoaded$ | async) | json }}</pre>
+
 
             <ng-container *ngIf="bankAccesses$|async;let bankAccesses;">
                 <!--<pre>bankAccesses: {{ bankAccesses | json }}</pre>-->

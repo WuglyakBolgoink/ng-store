@@ -17,9 +17,9 @@ export class BanksApiService {
             .get<BankAccesses>('http://localhost:3333/banksapi')
             .pipe(
                 tap(() => {
-                    console.log('[BanksApiService][getAll()][start 1s pause]');
+                    console.log('[BanksApiService][getAll()][start 3s pause]');
                 }),
-                delay(1000),
+                delay(3000),
                 tap(() => {
                     console.log('[BanksApiService][getAll()][return BankAccesses]');
                 })

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RootState } from '@app/modules/root-store/root-state';
-import { select, Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-banksapi-dashboard',

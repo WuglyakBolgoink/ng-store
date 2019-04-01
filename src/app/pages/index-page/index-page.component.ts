@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import {
     BankAccessLoadRequestAction,
     BankAccessRefreshAllAction
@@ -10,7 +10,7 @@ import {
     getBankAccessesLoading
 } from '@app/modules/root-store/feature-stores/banksapi/selectors/bankaccess.selectors';
 import { RootState } from '@app/modules/root-store/root-state';
-import { BankAccess, BankAccesses } from '@models/BANKSapi/BankAccess/BankAccess';
+import { BankAccess } from '@models/BANKSapi/BankAccess/BankAccess';
 import { BankProduct } from '@models/BANKSapi/BankAccess/BankProduct';
 import { select, Store } from '@ngrx/store';
 import { forEach as _forEach } from 'lodash';
@@ -64,7 +64,11 @@ export class IndexPageComponent implements OnInit, OnDestroy {
         // }));
     }
 
+    // @see: https://wesleygrimes.com/angular/2019/03/29/making-upgrades-to-angular-ngondestroy.html
+    @HostListener('window:beforeunload')
     public ngOnDestroy(): void {
+        console.warn('[ngOnDestroy]');
+
         _forEach(this.subscriptions, (subscription: Subscription) => {
             subscription.unsubscribe();
         });
