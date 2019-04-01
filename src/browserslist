@@ -1,0 +1,33 @@
+# This file is currently used by autoprefixer to adjust CSS to support the below specified browsers
+# For additional information regarding the format and rule options, please see:
+# https://github.com/browserslist/browserslist#queries
+
+>= 1%
+not dead
+not op_mini all
+
+ie >= 11
+last 2 Edge versions
+
+last 2 Chrome versions
+
+last 2 Firefox versions
+last 2 FirefoxAndroid versions
+Firefox ESR
+
+last 2 Safari versions
+iOS >= 10
+
+last 2 Opera versions
+
+Android >= 4.4
+last 5 ChromeAndroid versions
+
+last 2 QQAndroid versions
+last 2 Samsung versions
+last 2 UCAndroid versions
+
+# for copy/pasta ^_^ do not forget to update this list :) comma separated
+# >= 1%, not dead, not op_mini all, ie >= 11, last 2 Edge versions, last 2 Chrome versions, last 2 Firefox versions, last 2 FirefoxAndroid versions, Firefox ESR, last 2 Safari versions, iOS >= 10, last 2 Opera versions, Android >= 4.4, last 5 ChromeAndroid versions, last 2 QQAndroid versions, last 2 Samsung versions, last 2 UCAndroid versions
+# for example:
+# https://browserl.ist/?q=%3E%3D+1%25%2C+not+dead%2C+not+op_mini+all%2C+ie+%3E%3D+11%2C+last+2+Edge+versions%2C+last+2+Chrome+versions%2C+last+2+Firefox+versions%2C+last+2+FirefoxAndroid+versions%2C+Firefox+ESR%2C+last+2+Safari+versions%2C+iOS+%3E%3D+10%2C+last+2+Opera+versions%2C+Android+%3E%3D+4.4%2C+last+5+ChromeAndroid+versions%2C+last+2+QQAndroid+versions%2C+last+2+Samsung+versions%2C+last+2+UCAndroid+versions

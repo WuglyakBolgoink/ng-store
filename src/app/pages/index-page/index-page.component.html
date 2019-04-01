@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row text-center ">
+        <div class="col-4 shadow">
+            <button class="btn btn-block" (click)="clickLoad()" [disabled]="isLoading">Load</button>
+        </div>
+        <div class="col-4 shadow">
+            <button class="btn btn-block" (click)="clickAdd()" [disabled]="isLoading">Add Access</button>
+        </div>
+        <div class="col-4 shadow">
+            <button class="btn btn-block" (click)="clickRefresh()" [disabled]="isLoading">Refresh</button>
+        </div>
+    </div>
+    <div class="row mt-4 shadow">
+        <div class="col-12 p-3">
+            <pre>bankAccessesLoading$: {{ (bankAccessesLoading$ | async) | json }}</pre>
+            <pre>bankAccessesLoaded$: {{ (bankAccessesLoaded$ | async) | json }}</pre>
+
+            <ng-container *ngIf="bankAccesses$|async;let bankAccesses;">
+                <!--<pre>bankAccesses: {{ bankAccesses | json }}</pre>-->
+                <h3>Bank Accesses <span class="badge badge-info">{{ bankAccesses.length }}</span></h3>
+
+                <div *ngIf="bankAccesses.length > 0">
+                    <h4>BankName:</h4>
+                    <div *ngFor="let ba of bankAccesses; trackBy:trackByBankAccesses">
+                        {{ ba.bankAccess.institute.bankName }}
+                        [{{ ba.bankAccess.bankprodukte.length }}]
+                        <ul>
+                            <li *ngFor="let product of ba.bankAccess.bankprodukte; trackBy:trackByBankProducts">
+                                <span class="badge badge-danger">
+                                    {{ product.kategorie }}
+                                </span>
+                                &nbsp;
+                                {{ product.bezeichnung }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p *ngIf="bankAccesses.length === 0" class="alert alert-info">
+                    Bank accesses not exists...
+                </p>
+            </ng-container>
+        </div>
+    </div>
+</div>

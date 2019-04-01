@@ -1,0 +1,101 @@
+{
+    "55eb066c-d022-382a-9d5e-60d295783512": {
+        "status": "VOLLSTAENDIG",
+        "aktualisierungszeitpunkt": "2016-10-28 14:33:02",
+        "timeout": "2016-10-28 14:53:02",
+        "institute": {
+            "bankCode": "12345678",
+            "bankName": "Demo Provider",
+            "bic": "DEMO1234",
+            "logohref": ""
+        },
+        "tanMedien": [
+            {
+                "gueltigVon": "2016-10-28 14:33:03",
+                "gueltigBis": "2016-10-28 14:33:03",
+                "name": "Mobil",
+                "medienklasse": "MOBIL"
+            }
+        ],
+        "sicherheitsverfahren": [
+            {
+                "kodierung": 1,
+                "name": "Mock-TAN",
+                "hinweis": "Mock-TAN"
+            }
+        ],
+        "aktivesSicherheitsverfahren": {
+            "kodierung": 1,
+            "name": "Mock-TAN",
+            "hinweis": "Mock-TAN"
+        },
+        "bankprodukte": [
+            {
+                "id": "DE00123456789012345679",
+                "bezeichnung": "Demo-Tagesgeldkonto",
+                "kategorie": "TAGESGELDKONTO",
+                "aktualisierungszeitpunkt": "2016-10-28 14:33:03",
+                "saldo": 7365.56,
+                "saldoDatum": "2016-01-18 00:00:00",
+                "waehrung": "EUR",
+                "kontonummer": "9012345679",
+                "iban": "DE00123456789012345679",
+                "bic": "XXX12345678",
+                "blz": "12345678",
+                "inhaber": "Fritz Testmüller",
+                "relations": [
+                    {
+                        "rel": "start_ueberweisung",
+                        "href": "http://localhost:3333/banksapi/ueberweisung/00000000-0000-0000-0000-000000000000/DE00123456789012345679"
+                    },
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:3333/banksapi/55eb066c-d022-382a-9d5e-60d295783512/DE00123456789012345679"
+                    },
+                    {
+                        "rel": "get_kontoumsaetze",
+                        "href": "http://localhost:3333/banksapi/55eb066c-d022-382a-9d5e-60d295783512/DE00123456789012345679/kontoumsaetze"
+                    }
+                ],
+                "verfuegungsrahmen": 7365.56,
+                "verfuegterBetrag": 0.0
+            },
+            {
+                "id": "f3957aa9-fd45-436a-b27c-a1b13c746b97",
+                "bezeichnung": "Demo-Girokonto",
+                "kategorie": "GIROKONTO",
+                "aktualisierungszeitpunkt": "2016-10-28 14:33:03",
+                "saldo": 123,
+                "saldoDatum": "2016-01-18 00:00:00",
+                "waehrung": "EUR",
+                "kontonummer": "9012345679",
+                "iban": "DE00123456789012345679",
+                "bic": "XXX12345678",
+                "blz": "12345678",
+                "inhaber": "Max Musterman",
+                "relations": [
+                    {
+                        "rel": "start_ueberweisung",
+                        "href": "http://localhost:3333/banksapi/ueberweisung/00000000-0000-0000-0000-000000000000/DE00123456789012345679"
+                    },
+                    {
+                        "rel": "self",
+                        "href": "http://localhost:3333/banksapi/55eb066c-d022-382a-9d5e-60d295783512/DE00123456789012345679"
+                    },
+                    {
+                        "rel": "get_kontoumsaetze",
+                        "href": "http://localhost:3333/banksapi/55eb066c-d022-382a-9d5e-60d295783512/DE00123456789012345679/kontoumsaetze"
+                    }
+                ],
+                "verfuegungsrahmen": 123,
+                "verfuegterBetrag": 0.0
+            }
+        ],
+        "relations": [
+            {
+                "rel": "self",
+                "href": "http://localhost:3333/banksapi/55eb066c-d022-382a-9d5e-60d295783512"
+            }
+        ]
+    }
+}

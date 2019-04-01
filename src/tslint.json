@@ -1,0 +1,50 @@
+{
+    "extends": "../tslint.json",
+    "rulesDirectory": [
+    ],
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "app",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "app",
+            "kebab-case"
+        ],
+        "no-inferrable-types": [
+            true,
+            "ignore-params",
+            "ignore-properties"
+        ],
+        "max-line-length": [
+            true,
+            {
+                "limit": 140,
+                "ignore-pattern": "^import |^export {(.*?)}|class [a-zA-Z]+ implements |//|^`"
+            }
+        ],
+        "object-literal-shorthand": false,
+        "no-use-before-declare": false,
+        "whitespace": [
+            false,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-preblock",
+            "check-type",
+            "check-type-operator",
+            "check-typecast",
+            "check-separator",
+            "check-rest-spread",
+            "check-module"
+        ]
+    },
+    "linterOptions": {
+        "exclude": [
+        ]
+    }
+}

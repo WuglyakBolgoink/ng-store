@@ -1,0 +1,6 @@
+{
+    "!(*.spec).ts": [
+        "./node_modules/.bin/tslint --config ./src/tslint.json --project ./src/tsconfig.app.json --format stylish",
+        "git add"
+    ]
+}

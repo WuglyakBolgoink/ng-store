@@ -1,0 +1,39 @@
+language: node_js
+
+node_js:
+  - "11"
+
+sudo: false
+
+dist: trusty
+
+branches:
+  only:
+    - develop
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
+
+before_script:
+  - echo "before_script"
+
+script:
+  - npm run ci:lint
+  - npm run ci:test:unit --watch false -cc
+  - npm run ci:build
+  - xvfb-run npm run ci:test:e2e
+
+deploy:
+  provider: pages
+  verbose: false # Optional, be verbose about internal steps, defaults to false.
+  skip_cleanup: true # Make sure you have skip_cleanup set to true, otherwise Travis CI will delete all the files created during the build, which will probably delete what you are trying to upload.
+  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep_history: true # Optional, create incremental commit instead of doing push force, defaults to false.
+  local_dir: dist # Directory to push to GitHub Pages, defaults to current directory. Can be specified as an absolute path or a relative path from the current directory.
+  on:
+    branch: master

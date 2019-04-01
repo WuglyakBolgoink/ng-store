@@ -1,0 +1,95 @@
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+#   Sample Configs
+#     - https://github.com/sasstools/sass-lint/blob/develop/docs/sass-lint.yml
+#     - https://github.com/sasstools/gulp-sass-lint/blob/master/tests/.sass-lint.yml
+
+#   Sass Lint Rules
+#     - https://github.com/sasstools/sass-lint/tree/develop/docs/rules
+
+#   Severity
+#     - 0: turns rule off
+#     - 1: set as a warning
+#     - 2: set to error
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+
+options:
+  # Raise an error if more than 50 warnings are generated
+  max-warnings: 50
+  # Option cache-config will tell Sass Lint to cache the current configuration for each invocation of sass-lint.
+  # This option is disabled by default but you may consider enabling it if you're not planning on modifying
+  # your .sass-lint.yml config file as there will be a small performance gain.
+  cache-config: true
+  # Any of the supported ESLint Formatters can be used. Defaults to stylish
+  formatter: stylish
+  merge-default-rules: true
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+# File Options
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+
+files:
+  include:
+    - 'src/styles/**/*.scss'
+    - 'src/customers/**/*.scss'
+  ignore:
+    - 'node_modules/**/*'
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+# Rule Configuration
+# For all rules, setting their severity to 0 turns it off,
+# setting to 1 sets it as a warning (something that should not be committed in),
+# and setting to 2 sets it to an error (something that should not be written). If a rule is set to just a severity,
+# it will use the default configuration (where available).
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+rules:
+  indentation:
+    - 0
+    - size: 4
+
+  # Color
+  no-color-literals: 1
+  hex-notation:
+    - 1
+    -
+      style: lowercase
+
+  leading-zero:
+    - 2
+    - include: true
+  space-after-comma:
+    - 1
+    - include: true
+  space-between-parens:
+    - 0
+    - include: false
+  pseudo-element: 2
+  no-trailing-zero: 0
+  mixin-name-format: 0
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+  variable-name-format: 0
+  no-css-comments: 0
+  no-vendor-prefixes: 0
+  no-empty-rulesets: 0
+  quotes:
+    - 1
+    - style: double
+  border-zero: 0
+  property-sort-order: 0
+  force-element-nesting: 1
+  no-duplicate-properties:
+    - 1
+    - exclude:
+        - display
+        - background
+  mixins-before-declarations:
+    - 1
+    - exclude: ["FontLight", "FontLightItalic", "FontRegular", "FontMedium", "Opacity", "BorderRadius"]
+  nesting-depth:
+    - 2
+    - max-depth: 3
+
+  # Final Items
+  trailing-semicolon: 2
+  final-newline: 2
