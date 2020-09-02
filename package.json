@@ -109,7 +109,7 @@
         "tslint": "5.14.0",
         "typescript": "3.2.4",
         "uuid-validate": "0.0.3",
-        "webpack-bundle-analyzer": "3.1.0",
+        "webpack-bundle-analyzer": "3.3.2",
         "yargs": "13.2.2"
     },
     "engines": {
