@@ -63,7 +63,7 @@
         "bootstrap": "4.3.1",
         "classlist.js": "1.1.20150312",
         "core-js": "2.6.5",
-        "lodash": "4.17.11",
+        "lodash": "4.17.21",
         "lodash-es": "4.17.11",
         "ngrx-store-freeze": "0.2.4",
         "ngx-bootstrap": "4.0.0",
